@@ -23,12 +23,6 @@ namespace PerudoGUI
         int dicesLeftp5 = 5;
         int dicesLeftp6 = 5;
 
-        int pacos = 0;
-        int tweeen = 0;
-        int drieen = 0;
-        int vieren = 0;
-        int vijfen = 0;
-        int zessen = 0;
 
         AdminForm af;
 
