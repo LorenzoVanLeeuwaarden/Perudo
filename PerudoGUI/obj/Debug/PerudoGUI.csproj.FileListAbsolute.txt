@@ -1,0 +1,9 @@
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\bin\Debug\PerudoGUI.exe.config
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.csprojResolveAssemblyReference.cache
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.Properties.Resources.resources
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.csproj.GenerateResource.Cache
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\bin\Debug\PerudoGUI.exe
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\bin\Debug\PerudoGUI.pdb
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.exe
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.pdb
+c:\users\lorenzo\documents\visual studio 2012\Projects\PerudoGUI\PerudoGUI\obj\Debug\PerudoGUI.AdminForm.resources
