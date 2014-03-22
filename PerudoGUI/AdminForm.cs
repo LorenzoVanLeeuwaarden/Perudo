@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,8 @@ namespace PerudoGUI
         public enum steenType { pacos, tweeen, drieen, vieren, vijfen, zessen };
 
         static string currentBetBy = null;
-        static int currentBetAantal = 0;
-        static steenType currentsteenType;
+        static int currentBetAantal = 7;
+        static steenType currentsteenType = steenType.pacos;
 
         int pacos;  //Number of Pacos
         int tweeen; //Number of Twos
@@ -33,13 +34,79 @@ namespace PerudoGUI
             lg = new Logic(this); 
             InitializeComponent();
             rollDices();
+            initializeComboboxes();
         }
 
         public void rollDices() {
             lg.rollDices();             //Roll the dices
         }
 
-        
+        public void initializeComboboxes() {
+
+            string[] testArray = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" };
+            string[] testTypeArray = new string[] {"Paco", "Two", "Three", "Four", "Five", "Six"};
+
+            ArrayList aantalList = new ArrayList();
+            aantalList.AddRange(testArray);
+
+            ArrayList typeList = new ArrayList();
+            typeList.AddRange(testTypeArray);
+
+            Console.WriteLine(currentBetAantal);
+
+            for (int i = currentBetAantal -1; i > -1; i--)
+            {
+                aantalList.RemoveAt(i);
+                Console.WriteLine(i);
+            }
+
+            switch (currentsteenType) { 
+                case steenType.pacos:
+                    if (player1ComboboxType.Text.Equals("Paco"))
+                    {
+                        for (int i = currentBetAantal * 2 - 1; i > -1; i--)
+                        {
+                            aantalList.RemoveAt(i);
+                            Console.WriteLine(i);
+                        }
+                    }
+                    else {
+                        for (int i = currentBetAantal - 1; i > -1; i--)
+                        {
+                            aantalList.RemoveAt(i);
+                            Console.WriteLine(i);
+                        }
+                    }
+                    break;
+                case steenType.tweeen:
+                    break;
+                case steenType.drieen:
+                    typeList.RemoveAt(1);
+                    break;
+            }
+
+            string[] aantalArray = (String[]) aantalList.ToArray( typeof(string));
+            string[] typeArray = (String[])typeList.ToArray(typeof(string));
+
+            player1ComboboxAantal.SelectionChangeCommitted += new EventHandler(player1ComboboxAantal_SelectionChangeCommitted);
+            player1ComboboxType.SelectionChangeCommitted += new EventHandler(player1ComboboxType_SelectionChangeCommitted);
+
+            player1ComboboxAantal.Items.Clear();
+            player1ComboboxAantal.Items.AddRange(aantalArray);
+
+            player1ComboboxType.Items.Clear();
+            player1ComboboxType.Items.AddRange(typeArray);
+        }
+
+        private void player1ComboboxAantal_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //initializeComboboxes();
+        }
+
+        private void player1ComboboxType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //initializeComboboxes();
+        }
 
         //Load all the pictures into the right pictureboxes
         public void showPictures(int[] dices1, int[] dices2, int[] dices3, int[] dices4, int[] dices5, int[] dices6){
@@ -198,14 +265,10 @@ namespace PerudoGUI
                 return false;
             }
         }
-
-        //Make a new bet
-        public void newBet(int aantalpacos, int aantaltweeen, int aantaldrieen, int aantalvieren, int aantalvijfen, int aantalzessen, int betaantal, steenType type){ 
-            
-        }
-
+        
         private void player1Kazaa_Click(object sender, EventArgs e){
-            if (checkKazaa(pacos, tweeen, drieen, vieren, vijfen, zessen, 9, steenType.drieen)){
+
+            if (checkKazaa(pacos, tweeen, drieen, vieren, vijfen, zessen, Convert.ToInt32(player1ComboboxAantal.Text), getType())){
                 Console.WriteLine("Een correcte kazaa");
             }else{
                 Console.WriteLine("Een incorrecte kazaa");
@@ -213,7 +276,7 @@ namespace PerudoGUI
         }
 
         private void player1Dudo_Click(object sender, EventArgs e){
-            if (checkDudo(pacos, tweeen, drieen, vieren, vijfen, zessen, 9, steenType.drieen)){
+            if (checkDudo(pacos, tweeen, drieen, vieren, vijfen, zessen, Convert.ToInt32(player1ComboboxAantal.Text), getType())){
                 Console.WriteLine("Een correcte dudo");
             }else{
                 Console.WriteLine("Een incorrecte dudo");
@@ -221,20 +284,50 @@ namespace PerudoGUI
         }
 
         private void player1Bet_Click(object sender, EventArgs e){
-            betting(currentPlayer.Player1, 10, steenType.drieen);
-           
+
+            if (player1ComboboxAantal.Text.Equals("") || (player1ComboboxType.Text.Equals(""))){
+                MessageBox.Show("U heeft niets geselecteerd");
+            }
+            else
+            {
+                currentBetAantal = Convert.ToInt32(player1ComboboxAantal.Text);
+                currentsteenType = getType();
+                betting(currentPlayer.Player1, currentBetAantal, currentsteenType);
+            }
+            
         }
         
         public void betting(currentPlayer player, int aantal, steenType type){
-            Console.WriteLine(player + " - " + aantal + " - " + type);
             overviewLastBetByText.Text = player.ToString(); 
             overviewLastBetAantalText.Text = aantal.ToString();
             overviewLastBetTypeText.Text = type.ToString();
+        }
 
-            player1ComboboxAantal.Items.Clear();
-            player1ComboboxAantal.Items.AddRange(new object[] {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"});
+        public steenType getType() {
+           currentsteenType = steenType.pacos;
 
-            player1ComboboxType.Items.AddRange(new object[] {"Paco", "Two", "Three", "Four", "Five", "Six"});
+            switch (player1ComboboxType.Text)
+            {
+                case "Paco":
+                    currentsteenType = steenType.pacos;
+                    break;
+                case "Two":
+                    currentsteenType = steenType.tweeen;
+                    break;
+                case "Three":
+                    currentsteenType = steenType.drieen;
+                    break;
+                case "Four":
+                    currentsteenType = steenType.vieren;
+                    break;
+                case "Five":
+                    currentsteenType = steenType.vijfen;
+                    break;
+                case "Six":
+                    currentsteenType = steenType.zessen;
+                    break;
+            }
+            return currentsteenType;
         }
 
     }
