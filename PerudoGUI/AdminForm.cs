@@ -14,10 +14,13 @@ namespace PerudoGUI
     {
 
         Logic lg;
-        static string lastBetBy;
-        static string lastBet;
-        enum currentPlayer {Player1, Player2, Player3, Player4, Player5, Player6};
-        enum steenType { pacos, tweeen, drieen, vieren, vijfen, zessen };
+        
+        public enum currentPlayer {Player1, Player2, Player3, Player4, Player5, Player6};
+        public enum steenType { pacos, tweeen, drieen, vieren, vijfen, zessen };
+
+        static string currentBetBy = null;
+        static int currentBetAantal = 0;
+        static steenType currentsteenType;
 
         int pacos;  //Number of Pacos
         int tweeen; //Number of Twos
@@ -26,8 +29,7 @@ namespace PerudoGUI
         int vijfen; //Number of Fives
         int zessen; //Number of Sixes
 
-        public AdminForm()
-        {
+        public AdminForm(){
             lg = new Logic(this); 
             InitializeComponent();
             rollDices();
@@ -37,8 +39,10 @@ namespace PerudoGUI
             lg.rollDices();             //Roll the dices
         }
 
-        public void showPictures(int[] dices1, int[] dices2, int[] dices3, int[] dices4, int[] dices5, int[] dices6)
-        {
+        
+
+        //Load all the pictures into the right pictureboxes
+        public void showPictures(int[] dices1, int[] dices2, int[] dices3, int[] dices4, int[] dices5, int[] dices6){
             pacos = 0;
             tweeen = 0;
             drieen = 0;
@@ -67,8 +71,7 @@ namespace PerudoGUI
             PictureBox[] p6boxes = { player6Dice1, player6Dice2, player6Dice3, player6Dice4, player6Dice5 };
 
             //Loop through all the dices of each player and assign them to a picturebox
-            for (int i = 0; i < 5; i++)
-            {
+            for (int i = 0; i < 5; i++){
                 p1Overviewboxes[i].Image = images[dices1[i] - 1];
                 p2Overviewboxes[i].Image = images[dices2[i] - 1];
                 p3Overviewboxes[i].Image = images[dices3[i] - 1];
@@ -84,11 +87,9 @@ namespace PerudoGUI
                 p6boxes[i].Image = images[dices6[i] - 1];
             }
 
-
-            for (int a = 0; a < 6; a++) //Loop through all dices and count them
-            {
-                for (int i = 0; i < 5; i++)
-                {
+            //Loop through all dices and count them
+            for (int a = 0; a < 6; a++){
+                for (int i = 0; i < 5; i++){
                     switch (opperArray[a][i]) { 
                         case 1:
                             pacos += 1;
@@ -128,31 +129,113 @@ namespace PerudoGUI
             overviewAantalVijfenPlusPacosText.Text = (vijfen + pacos).ToString();
             overviewAantalZessenPlusPacosText.Text = (zessen + pacos).ToString();
 
-            overviewLastBetByText.Text = "Player 1";
-            overviewLastBetAantalText.Text = "25";
-            overviewLastBetTypeText.Text = steenType.drieen.ToString();
-            Console.WriteLine(currentPlayer.Player1);
+           
 
-            compareAmount(pacos, tweeen, drieen, vieren, vijfen, zessen, 25, steenType.drieen);
+            
             
         }
 
-        private void overviewRollDiceButton_Click(object sender, EventArgs e)
-        {
-            rollDices();
+        private void overviewRollDiceButton_Click(object sender, EventArgs e){
+            rollDices();           
+        }
+        
+        //Check if the 'dudo' is right or wrong
+        public bool checkDudo(int aantalpacos, int aantaltweeen, int aantaldrieen, int aantalvieren, int aantalvijfen, int aantalzessen, int betaantal, steenType type){
+            int vergelijkaantal = -1;
+            switch (type) { 
+                case steenType.pacos:
+                    vergelijkaantal = aantalpacos;
+                    break;
+                case steenType.tweeen:
+                    vergelijkaantal = aantaltweeen + aantalpacos;
+                    break;
+                case steenType.drieen:
+                    vergelijkaantal = aantaldrieen + aantalpacos;
+                    break;
+                case steenType.vieren:
+                    vergelijkaantal = aantalvieren + aantalpacos;
+                    break;
+                case steenType.vijfen:
+                    vergelijkaantal = aantalvijfen + aantalpacos;
+                    break;
+                case steenType.zessen:
+                    vergelijkaantal = aantalzessen + aantalpacos;
+                    break;
+            }
+            if (betaantal > vergelijkaantal && vergelijkaantal != -1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        //Check if the 'kazaa' is right or wrong
+        public bool checkKazaa(int aantalpacos, int aantaltweeen, int aantaldrieen, int aantalvieren, int aantalvijfen, int aantalzessen, int betaantal, steenType type){
+            int vergelijkaantal = -1;
+            switch (type){
+                case steenType.pacos:
+                    vergelijkaantal = aantalpacos;
+                    break;
+                case steenType.tweeen:
+                    vergelijkaantal = aantaltweeen + aantalpacos;
+                    break;
+                case steenType.drieen:
+                    vergelijkaantal = aantaldrieen + aantalpacos;
+                    break;
+                case steenType.vieren:
+                    vergelijkaantal = aantalvieren + aantalpacos;
+                    break;
+                case steenType.vijfen:
+                    vergelijkaantal = aantalvijfen + aantalpacos;
+                    break;
+                case steenType.zessen:
+                    vergelijkaantal = aantalzessen + aantalpacos;
+                    break;
+            }
+            if (betaantal == vergelijkaantal && vergelijkaantal != -1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        //Make a new bet
+        public void newBet(int aantalpacos, int aantaltweeen, int aantaldrieen, int aantalvieren, int aantalvijfen, int aantalzessen, int betaantal, steenType type){ 
+            
+        }
+
+        private void player1Kazaa_Click(object sender, EventArgs e){
+            if (checkKazaa(pacos, tweeen, drieen, vieren, vijfen, zessen, 9, steenType.drieen)){
+                Console.WriteLine("Een correcte kazaa");
+            }else{
+                Console.WriteLine("Een incorrecte kazaa");
+            }
+        }
+
+        private void player1Dudo_Click(object sender, EventArgs e){
+            if (checkDudo(pacos, tweeen, drieen, vieren, vijfen, zessen, 9, steenType.drieen)){
+                Console.WriteLine("Een correcte dudo");
+            }else{
+                Console.WriteLine("Een incorrecte dudo");
+            }
+        }
+
+        private void player1Bet_Click(object sender, EventArgs e){
+            betting(currentPlayer.Player1, 10, steenType.drieen);
            
         }
+        
+        public void betting(currentPlayer player, int aantal, steenType type){
+            Console.WriteLine(player + " - " + aantal + " - " + type);
+            overviewLastBetByText.Text = player.ToString(); 
+            overviewLastBetAantalText.Text = aantal.ToString();
+            overviewLastBetTypeText.Text = type.ToString();
 
-        private void player1Dudo_Click(object sender, EventArgs e)
-        {
-            
+            player1ComboboxAantal.Items.Clear();
+            player1ComboboxAantal.Items.AddRange(new object[] {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"});
+
+            player1ComboboxType.Items.AddRange(new object[] {"Paco", "Two", "Three", "Four", "Five", "Six"});
         }
 
-        public bool compareAmount(int aantalpacos, int aantaltweeen, int aantaldrieen, int aantalvieren, int aantalvijfen, int aantalzessen, int betaantal, steenType type){
-            
-            
-
-            return true;
-        }
     }
 }

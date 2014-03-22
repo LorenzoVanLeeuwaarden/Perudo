@@ -471,7 +471,7 @@
   <data name="OverviewPlayer4Dice1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAARBSURBVHhe7ZtNSxVRGMfvpxBc
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAARBSURBVHhe7ZtNSxVRGMfvpxBc
         iLpwp4hbEfwEYos2LloJYbRz4SKoNl78BgpBlHKhIIOgJKQWCkEk1qJWQSlJ9AIhXQO9cb083f9pnuGc
         c8/clzPPfZlxDvycO9c555nzn/+Zcx7HyRFRJJVKhX5/eE8/d3YSzfGbPaqcl6tdcvcTOL88+/GNDgsF
         2ltaolfz84lld27O4FM+T+ib3V9Q88XRs6ehALYQdsNJ4cXMjOL59LTicG2t2lWz38aO7gLe2o0lFRZh
@@ -571,7 +571,7 @@
   <data name="OverviewPlayer3Dice2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAARBSURBVHhe7ZtNSxVRGMfvpxBc
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAARBSURBVHhe7ZtNSxVRGMfvpxBc
         iLpwp4hbEfwEYos2LloJYbRz4SKoNl78BgpBlHKhIIOgJKQWCkEk1qJWQSlJ9AIhXQO9cb083f9pnuGc
         c8/clzPPfZlxDvycO9c555nzn/+Zcx7HyRFRJJVKhX5/eE8/d3YSzfGbPaqcl6tdcvcTOL88+/GNDgsF
         2ltaolfz84lld27O4FM+T+ib3V9Q88XRs6ehALYQdsNJ4cXMjOL59LTicG2t2lWz38aO7gLe2o0lFRZh
@@ -596,7 +596,7 @@
   <data name="OverviewPlayer3Dice1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAARBSURBVHhe7ZtNSxVRGMfvpxBc
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAARBSURBVHhe7ZtNSxVRGMfvpxBc
         iLpwp4hbEfwEYos2LloJYbRz4SKoNl78BgpBlHKhIIOgJKQWCkEk1qJWQSlJ9AIhXQO9cb083f9pnuGc
         c8/clzPPfZlxDvycO9c555nzn/+Zcx7HyRFRJJVKhX5/eE8/d3YSzfGbPaqcl6tdcvcTOL88+/GNDgsF
         2ltaolfz84lld27O4FM+T+ib3V9Q88XRs6ehALYQdsNJ4cXMjOL59LTicG2t2lWz38aO7gLe2o0lFRZh
@@ -671,7 +671,7 @@
   <data name="OverviewPlayer2Dice3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAARBSURBVHhe7ZtNSxVRGMfvpxBc
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAARBSURBVHhe7ZtNSxVRGMfvpxBc
         iLpwp4hbEfwEYos2LloJYbRz4SKoNl78BgpBlHKhIIOgJKQWCkEk1qJWQSlJ9AIhXQO9cb083f9pnuGc
         c8/clzPPfZlxDvycO9c555nzn/+Zcx7HyRFRJJVKhX5/eE8/d3YSzfGbPaqcl6tdcvcTOL88+/GNDgsF
         2ltaolfz84lld27O4FM+T+ib3V9Q88XRs6ehALYQdsNJ4cXMjOL59LTicG2t2lWz38aO7gLe2o0lFRZh
@@ -693,24 +693,6 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>-20, 367, 391, 0</value>
-  </metadata>
-  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>-20, 367</value>
-  </metadata>
-  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 0</value>
-  </metadata>
-  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>-21, 268, 391, 0</value>
-  </metadata>
-  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>-21, 268</value>
-  </metadata>
-  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 0</value>
-  </metadata>
   <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>-20, 367, 391, 0</value>
   </metadata>

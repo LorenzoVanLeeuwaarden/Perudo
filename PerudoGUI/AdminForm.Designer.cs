@@ -95,6 +95,11 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Player1Tab = new System.Windows.Forms.TabPage();
+            this.player1Kazaa = new System.Windows.Forms.Button();
+            this.player1Dudo = new System.Windows.Forms.Button();
+            this.player1Bet = new System.Windows.Forms.Button();
+            this.player1ComboboxType = new System.Windows.Forms.ComboBox();
+            this.player1ComboboxAantal = new System.Windows.Forms.ComboBox();
             this.player1Dice5 = new System.Windows.Forms.PictureBox();
             this.player1Dice4 = new System.Windows.Forms.PictureBox();
             this.player1Dice3 = new System.Windows.Forms.PictureBox();
@@ -130,11 +135,6 @@
             this.player6Dice3 = new System.Windows.Forms.PictureBox();
             this.player6Dice2 = new System.Windows.Forms.PictureBox();
             this.player6Dice1 = new System.Windows.Forms.PictureBox();
-            this.player1ComboboxAantal = new System.Windows.Forms.ComboBox();
-            this.player1ComboboxType = new System.Windows.Forms.ComboBox();
-            this.player1Bet = new System.Windows.Forms.Button();
-            this.player1Dudo = new System.Windows.Forms.Button();
-            this.player1Kazaa = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -957,6 +957,66 @@
             this.Player1Tab.TabIndex = 1;
             this.Player1Tab.Text = "Player 1";
             // 
+            // player1Kazaa
+            // 
+            this.player1Kazaa.Location = new System.Drawing.Point(180, 117);
+            this.player1Kazaa.Name = "player1Kazaa";
+            this.player1Kazaa.Size = new System.Drawing.Size(160, 23);
+            this.player1Kazaa.TabIndex = 55;
+            this.player1Kazaa.Text = "Kazaa!";
+            this.player1Kazaa.UseVisualStyleBackColor = true;
+            this.player1Kazaa.Click += new System.EventHandler(this.player1Kazaa_Click);
+            // 
+            // player1Dudo
+            // 
+            this.player1Dudo.Location = new System.Drawing.Point(11, 117);
+            this.player1Dudo.Name = "player1Dudo";
+            this.player1Dudo.Size = new System.Drawing.Size(160, 23);
+            this.player1Dudo.TabIndex = 54;
+            this.player1Dudo.Text = "Dudo!";
+            this.player1Dudo.UseVisualStyleBackColor = true;
+            this.player1Dudo.Click += new System.EventHandler(this.player1Dudo_Click);
+            // 
+            // player1Bet
+            // 
+            this.player1Bet.Location = new System.Drawing.Point(265, 89);
+            this.player1Bet.Name = "player1Bet";
+            this.player1Bet.Size = new System.Drawing.Size(75, 23);
+            this.player1Bet.TabIndex = 53;
+            this.player1Bet.Text = "Bet!";
+            this.player1Bet.UseVisualStyleBackColor = true;
+            this.player1Bet.Click += new System.EventHandler(this.player1Bet_Click);
+            // 
+            // player1ComboboxType
+            // 
+            this.player1ComboboxType.FormattingEnabled = true;
+            this.player1ComboboxType.Location = new System.Drawing.Point(138, 90);
+            this.player1ComboboxType.Name = "player1ComboboxType";
+            this.player1ComboboxType.Size = new System.Drawing.Size(121, 21);
+            this.player1ComboboxType.TabIndex = 52;
+            // 
+            // player1ComboboxAantal
+            // 
+            this.player1ComboboxAantal.FormattingEnabled = true;
+            this.player1ComboboxAantal.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13"});
+            this.player1ComboboxAantal.Location = new System.Drawing.Point(11, 90);
+            this.player1ComboboxAantal.Name = "player1ComboboxAantal";
+            this.player1ComboboxAantal.Size = new System.Drawing.Size(121, 21);
+            this.player1ComboboxAantal.TabIndex = 51;
+            // 
             // player1Dice5
             // 
             this.player1Dice5.Image = global::PerudoGUI.Properties.Resources.Perudo1;
@@ -1326,50 +1386,6 @@
             this.player6Dice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.player6Dice1.TabIndex = 67;
             this.player6Dice1.TabStop = false;
-            // 
-            // player1ComboboxAantal
-            // 
-            this.player1ComboboxAantal.FormattingEnabled = true;
-            this.player1ComboboxAantal.Location = new System.Drawing.Point(11, 90);
-            this.player1ComboboxAantal.Name = "player1ComboboxAantal";
-            this.player1ComboboxAantal.Size = new System.Drawing.Size(121, 21);
-            this.player1ComboboxAantal.TabIndex = 51;
-            // 
-            // player1ComboboxType
-            // 
-            this.player1ComboboxType.FormattingEnabled = true;
-            this.player1ComboboxType.Location = new System.Drawing.Point(138, 90);
-            this.player1ComboboxType.Name = "player1ComboboxType";
-            this.player1ComboboxType.Size = new System.Drawing.Size(121, 21);
-            this.player1ComboboxType.TabIndex = 52;
-            // 
-            // player1Bet
-            // 
-            this.player1Bet.Location = new System.Drawing.Point(265, 89);
-            this.player1Bet.Name = "player1Bet";
-            this.player1Bet.Size = new System.Drawing.Size(75, 23);
-            this.player1Bet.TabIndex = 53;
-            this.player1Bet.Text = "Bet!";
-            this.player1Bet.UseVisualStyleBackColor = true;
-            // 
-            // player1Dudo
-            // 
-            this.player1Dudo.Location = new System.Drawing.Point(11, 117);
-            this.player1Dudo.Name = "player1Dudo";
-            this.player1Dudo.Size = new System.Drawing.Size(160, 23);
-            this.player1Dudo.TabIndex = 54;
-            this.player1Dudo.Text = "Dudo!";
-            this.player1Dudo.UseVisualStyleBackColor = true;
-            this.player1Dudo.Click += new System.EventHandler(this.player1Dudo_Click);
-            // 
-            // player1Kazaa
-            // 
-            this.player1Kazaa.Location = new System.Drawing.Point(180, 117);
-            this.player1Kazaa.Name = "player1Kazaa";
-            this.player1Kazaa.Size = new System.Drawing.Size(160, 23);
-            this.player1Kazaa.TabIndex = 55;
-            this.player1Kazaa.Text = "Kazaa!";
-            this.player1Kazaa.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 
